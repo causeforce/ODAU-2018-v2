@@ -1,30 +1,11 @@
 $(document).ready(function () {
     
-    // Montreal French/English Button
-    $('.french-btn, .english-btn').prependTo($('.mk-grid.header-grid'));
-    
-    // Parse the URL parameter
-    function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
-    // Give the parameter a variable name
-    var dynamicContent = getParameterByName('lang');
-    
-    var url = window.location.href;
-    
-    if (dynamicContent == 'fr') {
-        $('.french-btn').hide();
-		$('.english-btn').show();
-	} else {
-        $('.english-btn').hide();
-        $('.french-btn').show();
-    }
+    // Fifth Footer Widget
+    $('.footer-wrapper .mk-padding-wrapper div:nth-child(5)').removeClass('mk-col-1-6');
+    $('.footer-wrapper .mk-padding-wrapper div:nth-child(5)').addClass('mk-col-1-8');
+    // Sixth Footer Widget
+    $('.footer-wrapper .mk-padding-wrapper div:nth-child(6)').removeClass('mk-col-1-6');
+    $('.footer-wrapper .mk-padding-wrapper div:nth-child(6)').addClass('mk-col-1-5');
     
     // Sticky Side Nav Area 
     $("ul.mk-tabs-tabs, .e-tab-container>nav").stick_in_parent({offset_top: 150});
@@ -38,13 +19,13 @@ $(document).ready(function () {
     });
 
     // Footer Social Icons
-    $(function() {
-        if ( document.location.href.indexOf('/montreal') > -1 ) {
-            $('#sub-footer>.mk-grid').prepend('<div class="footer-social"><div class="social-icon-container"><a  target="_blank" href="https://www.facebook.com/LeCycloDefi/">&#xf09a;</a></div> <div class="social-icon-container"><a target="_blank" href="https://www.instagram.com/quebecride/">&#xf16d;</a></div> <div class="social-icon-container"><a target="_blank" href="https://twitter.com/TheQuebecRide">&#xf099;</a></div></div>');
-        } else {
-            $('#sub-footer>.mk-grid').prepend('<div class="footer-social"><div class="social-icon-container"><a  target="_blank" href="https://www.facebook.com/OntarioRide">&#xf09a;</a></div> <div class="social-icon-container"><a target="_blank" href="http://instagram.com/ontarioride">&#xf16d;</a></div> <div class="social-icon-container"><a target="_blank" href="http://www.twitter.com/TheOntarioRide">&#xf099;</a></div></div>');
-        }
-    });
+//    $(function() {
+//        if ( document.location.href.indexOf('/montreal') > -1 ) {
+//            $('#sub-footer>.mk-grid').prepend('<div class="footer-social"><div class="social-icon-container"><a  target="_blank" href="https://www.facebook.com/LeCycloDefi/">&#xf09a;</a></div> <div class="social-icon-container"><a target="_blank" href="https://www.instagram.com/quebecride/">&#xf16d;</a></div> <div class="social-icon-container"><a target="_blank" href="https://twitter.com/TheQuebecRide">&#xf099;</a></div></div>');
+//        } else {
+//            $('#sub-footer>.mk-grid').prepend('<div class="footer-social"><div class="social-icon-container"><a  target="_blank" href="https://www.facebook.com/OntarioRide">&#xf09a;</a></div> <div class="social-icon-container"><a target="_blank" href="http://instagram.com/ontarioride">&#xf16d;</a></div> <div class="social-icon-container"><a target="_blank" href="http://www.twitter.com/TheOntarioRide">&#xf099;</a></div></div>');
+//        }
+//    });
     
     // Open Accordion on Outfitters Page
     $('.outfitters-accordion-section').removeClass('vc_active');
