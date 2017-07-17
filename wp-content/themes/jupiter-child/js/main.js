@@ -1,5 +1,15 @@
 $(document).ready(function () {
     
+    // Impact page move accordion into Tab
+    $('.faqs_accordion_row').appendTo('#section-impact-tab-01');
+    
+    // AS A TEAM NAV ACTIVE CLASS
+    $('.as-team-nav div:first-child h4 a').addClass('active-orange');
+    $('.as-team-nav h4 a').on('click', function() {
+        $('.as-team-nav h4 a').not(this).removeClass('active-orange');
+        $(this).addClass('active-orange');
+    });
+    
     // Fifth Footer Widget
     $('.footer-wrapper .mk-padding-wrapper div:nth-child(5)').removeClass('mk-col-1-6');
     $('.footer-wrapper .mk-padding-wrapper div:nth-child(5)').addClass('mk-col-1-8');
@@ -8,9 +18,9 @@ $(document).ready(function () {
     $('.footer-wrapper .mk-padding-wrapper div:nth-child(6)').addClass('mk-col-1-5');
     
     // Sticky Side Nav Area 
-    $("ul.mk-tabs-tabs, .e-tab-container>nav").stick_in_parent({offset_top: 150});
+    $("ul.mk-tabs-tabs, .e-tab-container>nav, .as-team-nav").stick_in_parent({offset_top: 150});
     
-    $('ul.mk-tabs-tabs, .programs-tabs-link-column')
+    $('ul.mk-tabs-tabs, .programs-tabs-link-column, .as-team-nav')
     .on('sticky_kit:bottom', function(e) {
     $(this).parent().css('position', 'static');
     }) 
