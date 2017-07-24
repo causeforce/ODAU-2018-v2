@@ -283,15 +283,14 @@ $hover: darken($bg, 10%);
     @extend %btn-regular;
     background: $orange !important;
     border: 2px solid $orange;
-    color: $white;
+    color: $white !important;
     transition: all 0.2s ease-in;
     font-family: $h-font !important;
     &:active {
         background: $white;
     }
     &:hover {
-        background: $white;
-        color: $orange;
+        background: #a75b00 !important;
     }
 }
 
@@ -816,7 +815,7 @@ ul#menu-main_menu {
             min-width: 160px; 
             position: absolute;
             top: 40px;
-            left: -25px;
+            left: -5px;
             li{
                 a {
                     text-align: center;
@@ -870,7 +869,7 @@ ul#menu-main_menu {
         }
         &:nth-child(2) {
             .sub-menu {
-                left: -40px;
+                left: -25px;
             }
         }
         &:nth-child(-n+3){

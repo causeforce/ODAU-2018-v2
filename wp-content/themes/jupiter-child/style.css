@@ -621,7 +621,7 @@ ul#menu-main_menu li ul.sub-menu {
   min-width: 160px;
   position: absolute;
   top: 40px;
-  left: -25px;
+  left: -5px;
 }
 ul#menu-main_menu li ul.sub-menu li a {
   text-align: center;
@@ -656,7 +656,7 @@ ul#menu-main_menu li ul.sub-menu li a {
   left: -40px;
 }
 #menu-main_menu li.menu-item.no-mega-menu:nth-child(2) .sub-menu, #menu-main_menu_french li.menu-item.no-mega-menu:nth-child(2) .sub-menu {
-  left: -40px;
+  left: -25px;
 }
 #menu-main_menu li.menu-item.no-mega-menu:nth-child(-n+3), #menu-main_menu_french li.menu-item.no-mega-menu:nth-child(-n+3) {
   margin-right: 35px;
