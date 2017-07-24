@@ -364,11 +364,11 @@ button {
     font-family: $h-font;
 }
 
-@media screen and (min-width: 1500px) {
-    #background-layer--2 {
-        background-position: center top !important;
-    }
-}
+//@media screen and (min-width: 1500px) {
+//    #background-layer--2 {
+//        background-position: center top !important;
+//    }
+//}
 
 // === ACTIVE STATE FOR LINKS === //
 
@@ -461,10 +461,10 @@ button {
 }
 
 .hover-link-default {
-    @extend %link-hover-effect;
     font-family: $h-font;
     padding-left:5px;
     padding-right:5px;
+    border-bottom: 3px solid $orange;
 }
 
 /* ============== Active Menu List  ============== */
@@ -567,6 +567,7 @@ ul.main-navigation-ul {
         color: $white !important;
         font-size: 8em !important;
         text-align: center;
+        text-shadow: 2px 2px 10px #000;
         @media screen and (max-width: 768px) {
             font-size: 6em !important;
         }
@@ -814,7 +815,7 @@ ul#menu-main_menu {
             color: $black;
             min-width: 160px; 
             position: absolute;
-            top: 22px;
+            top: 40px;
             left: -25px;
             li{
                 a {
@@ -846,7 +847,7 @@ ul#menu-main_menu {
 
 .main-navigation-ul ul.sub-menu li.current-menu-item {
     a.menu-item-link{
-        color: $blue !important;
+        color: $orange !important;
     }
 }
 
@@ -874,11 +875,17 @@ ul#menu-main_menu {
         }
         &:nth-child(-n+3){
             margin-right: 35px;
-            @extend %link-hover-effect;
+            transition: all 0.2s ease-in;
+            &:hover {
+                border-bottom: 3px solid $blue;
+            }
             a {
                 font-size: 18px;
                 padding-left: 5px;
                 padding-right: 5px;
+                &:hover {
+                    border: none;
+                }
             }
         }
         &:nth-child(n+4){
@@ -992,6 +999,23 @@ ul#menu-main_menu {
     background-color: $blue !important;
     .footer-wrapper{
         max-width: 1250px;
+        @media screen and (max-width: 1096px) {
+            .mk-col-1-5,
+            .mk-col-1-6,
+            .mk-col-1-8 {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin: 0 auto;
+                ul {
+                    li{
+                        a{
+                            text-align: center !important;
+                        }
+                    }
+                }
+            }
+        }
         .mk-padding-wrapper {
             div {
                 @media screen and (max-width: 768px) {
@@ -3020,7 +3044,7 @@ display: inline-block;
 .od-gray-row {
     background: $gray-light;
     .od-gray-column {
-        padding: 100px 50px 0px;
+        padding: 65px 50px;
         @media screen and (max-width: 768px) {
             padding: 20px;
         }
@@ -3046,6 +3070,11 @@ display: inline-block;
             color: $orange;		
         }		
     }		
+}
+.right-image {
+    @extend .no-padding-right;
+    min-height: 400px;
+    background-size: cover;
 }
 
 // =============== OD18 AMBASSADORS Page =============== //
@@ -3241,14 +3270,20 @@ display: inline-block;
         min-height: 400px !important;
     }
 }
-
 .orange-header-pg-row {		
     @extend .header-pg-row;		
     border-bottom: 15px solid $orange;
     @media screen and (max-width: 768px) {
         min-height: 400px !important;
     }
-}		
+}
+.homepage-orange-header-pg-row {
+    @extend .header-pg-row;		
+    border-bottom: 15px solid $orange;
+    @media screen and (max-width: 768px) {
+        min-height: auto !important;
+    }
+}
 .blue-header-pg-row {		
     @extend .header-pg-row;		
     border-bottom: 15px solid $blue;
