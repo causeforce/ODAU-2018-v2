@@ -194,7 +194,7 @@
 .btn-regular-orange, #menu-main_menu li.menu-item.no-mega-menu:nth-child(4), #menu-main_menu_french li.menu-item.no-mega-menu:nth-child(4), .btn-regular-with-link-orange > a {
   background: #e27c00 !important;
   border: 2px solid #e27c00;
-  color: #fff;
+  color: #fff !important;
   transition: all 0.2s ease-in;
   font-family: "Karbon Bold", Helvetica, sans-serif !important;
 }
@@ -202,8 +202,7 @@
   background: #fff;
 }
 .btn-regular-orange:hover, #menu-main_menu li.menu-item.no-mega-menu:nth-child(4):hover, #menu-main_menu_french li.menu-item.no-mega-menu:nth-child(4):hover, .btn-regular-with-link-orange > a:hover {
-  background: #fff;
-  color: #e27c00;
+  background: #a75b00 !important;
 }
 .btn-regular-with-link-blue {
   font-family: "Karbon Bold", Helvetica, sans-serif !important;
@@ -388,8 +387,11 @@ ul.main-navigation-ul li.menu-item.menu-item-type-post_type.menu-item-object-pag
   height: 100% !important;
 }
 .od-header-title {
-  position: relative;
-  top: 300px;
+  text-align: center;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .od-header-title h1 {
   color: #fff !important;
