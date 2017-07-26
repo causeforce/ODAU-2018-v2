@@ -392,6 +392,7 @@ ul.main-navigation-ul li.menu-item.menu-item-type-post_type.menu-item-object-pag
   top: 75%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
 }
 .od-header-title h1 {
   color: #fff !important;
@@ -401,7 +402,7 @@ ul.main-navigation-ul li.menu-item.menu-item-type-post_type.menu-item-object-pag
 }
 @media screen and (max-width: 768px) {
   .od-header-title h1 {
-    font-size: 6em !important;
+    font-size: 14vw !important;
   }
 }
 .pg-indent {
@@ -1526,6 +1527,7 @@ span.vc_tta-title-text.display-none-accordion:after {
   }
   nav.menu-main_menu-container ul.mk-responsive-nav li:nth-child(n+4) a {
     padding: 25px;
+    text-align: center;
   }
   nav.menu-main_menu-container ul.mk-responsive-nav li:nth-child(4) {
     background: #e27c00;
@@ -1535,6 +1537,13 @@ span.vc_tta-title-text.display-none-accordion:after {
   }
   nav.menu-main_menu-container ul.mk-responsive-nav li:nth-child(n+5) {
     border-bottom: 1px solid #00609c;
+    transition: all 0.2s ease-in;
+  }
+  nav.menu-main_menu-container ul.mk-responsive-nav li:nth-child(n+5):hover {
+    background: #00609c;
+  }
+  nav.menu-main_menu-container ul.mk-responsive-nav li:nth-child(n+5):hover a {
+    color: #fff !important;
   }
   nav.menu-main_menu-container ul.mk-responsive-nav li a {
     font-size: 20px;
@@ -2199,15 +2208,53 @@ span.vc_tta-title-text.display-none-accordion:after {
   background-repeat: no-repeat;
   width: 50vw;
 }
-#ride-preloader {
-  position: fixed;
-  left: 0;
-  top: 0;
+.load {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  /*change these sizes to fit into your project*/
+  height: 100px;
   z-index: 999;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  background: #f5f5f5 url('http://ride.conquercancer.ca/wp-content/themes/jupiter-child/img/rolling.svg') no-repeat center center;
+}
+.load hr {
+  border: 0;
+  margin: 0;
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  border-radius: 50%;
+  animation: spin 2s ease infinite;
+}
+.load :first-child {
+  background: #4e9d2d;
+  animation-delay: -1.5s;
+}
+.load :nth-child(2) {
+  background: #b3282d;
+  animation-delay: -1s;
+}
+.load :nth-child(3) {
+  background: #e27c00;
+  animation-delay: -0.5s;
+}
+.load :last-child {
+  background: #00609c;
+}
+@keyframes spin {
+  0%, 100% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(160%);
+  }
+  50% {
+    transform: translate(160%, 160%);
+  }
+  75% {
+    transform: translate(0, 160%);
+  }
 }
 .fundraising-tabs .et-tabs nav ul {
   padding: 15px 0px;

@@ -104,8 +104,8 @@ $(document).ready(function () {
 
 // Window Load Function
 $(window).on("load",function(){
-    //Preloard to FadeOut on Load
-   $('div#ride-preloader').fadeOut('slow');
+    //Preload to FadeOut on Load
+   $('div.load').fadeOut('slow');
     
     // View More or Less Function
     $('ul#top-teams, ul#top-fundraising').each(function(){
