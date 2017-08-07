@@ -11,9 +11,60 @@
 		do_action('theme_after_body_tag_start');
 	?>
 	
-	<div class="load">
-      <hr/><hr/><hr/><hr/>
+	<div class="preloader-wrapper">
+     
+        <!-- Comments are just to fix whitespace with inline-block -->
+        <div class="spinner"><!--
+            --><div class="spinner-line spinner-line--1"><!--
+                --><div class="spinner-line-cog"><!--
+                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--left"></div><!--
+                --></div><!--
+                --><div class="spinner-line-ticker"><!--
+                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--center"></div><!--
+                --></div><!--
+                --><div class="spinner-line-cog"><!--
+                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--right"></div><!--
+                --></div><!--
+            --></div><!--
+            --><div class="spinner-line spinner-line--2"><!--
+                --><div class="spinner-line-cog"><!--
+                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--left"></div><!--
+                --></div><!--
+                --><div class="spinner-line-ticker"><!--
+                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--center"></div><!--
+                --></div><!--
+                --><div class="spinner-line-cog"><!--
+                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--right"></div><!--
+                --></div><!--
+            --></div><!--
+            --><div class="spinner-line spinner-line--3"><!--
+                --><div class="spinner-line-cog"><!--
+                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--left"></div><!--
+                --></div><!--
+                --><div class="spinner-line-ticker"><!--
+                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--center"></div><!--
+                --></div><!--
+                --><div class="spinner-line-cog"><!--
+                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--right"></div><!--
+                --></div><!--
+            --></div><!--
+            --><div class="spinner-line spinner-line--4"><!--
+                --><div class="spinner-line-cog"><!--
+                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--left"></div><!--
+                --></div><!--
+                --><div class="spinner-line-ticker"><!--
+                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--center"></div><!--
+                --></div><!--
+                --><div class="spinner-line-cog"><!--
+                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--right"></div><!--
+                --></div><!--
+            --></div><!--
+
+        --></div><!--/spinner -->
     </div>
+  
+
+
 
 	<!-- Target for scroll anchors to achieve native browser bahaviour + possible enhancements like smooth scrolling -->
 	<div id="top-of-page"></div>

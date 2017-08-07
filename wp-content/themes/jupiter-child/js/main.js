@@ -98,14 +98,15 @@ $(document).ready(function () {
       }
 
       $(this).siblings('li.toggleable').slideToggle();
-    }); 
+    });
     
 }); // END Document Ready
 
 // Window Load Function
 $(window).on("load",function(){
     //Preload to FadeOut on Load
-   $('div.load').fadeOut('slow');
+    $('div.spinner').fadeOut('slow');
+    $('.preloader-wrapper').css('display', 'none');
     
     // View More or Less Function
     $('ul#top-teams, ul#top-fundraising').each(function(){

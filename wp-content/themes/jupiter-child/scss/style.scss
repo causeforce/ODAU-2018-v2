@@ -104,6 +104,7 @@ $hover: darken($bg, 10%);
   transition: all 0.2s ease-in !important;
     background-color: #fff !important;
     font-family: $h-font !important;
+    padding: 12px 30px 9px !important;
   &:hover {
     background: $blue !important;
     color: $white !important;
@@ -122,6 +123,7 @@ $hover: darken($bg, 10%);
   transition: all 0.2s ease-in !important;
     background-color: transparent !important;
     font-family: $h-font !important;
+    padding: 12px 30px 9px !important;
   &:hover {
     background: $green !important;
     color: $white !important;
@@ -140,6 +142,7 @@ $hover: darken($bg, 10%);
   transition: all 0.2s ease-in !important;
     background-color: transparent !important;
     font-family: $h-font !important;
+    padding: 12px 30px 9px !important;
   &:hover {
     background: $orange !important;
     color: $white !important;
@@ -176,6 +179,7 @@ $hover: darken($bg, 10%);
   transition: all 0.2s ease-in !important;
     background-color: transparent!important;
     font-family: $h-font !important;
+    padding: 12px 30px 9px !important;
   &:hover {
     background: $green !important;
     color: $white !important;
@@ -188,19 +192,21 @@ $hover: darken($bg, 10%);
 
 .btn-outline-white > button,
 .btn-with-link-white > a {
-  @extend %btn-outline;
-  border: 2px solid $white !important;
-  color: $white !important;
-  transition: all 0.2s ease-in;
-    background-color: #000 !important;
-  &:hover {
-    background: $white !important;
-    color: $black !important;
-  }
-  &:active {
-    background: $black !important;
+    @extend %btn-outline;
+    border: 2px solid $white !important;
     color: $white !important;
-  }
+    transition: all 0.2s ease-in;
+    background-color: transparent!important;
+    padding: 12px 30px 9px !important;
+    &:hover {
+        background: $orange !important;
+        color: $white !important;
+        border-color: $orange !important;
+    }
+    &:active {
+        background: $orange !important;
+        color: $white !important;
+    }
 }
 .btn-with-link-trans > a {
   @extend %btn-outline;
@@ -282,7 +288,7 @@ $hover: darken($bg, 10%);
 .btn-regular-with-link-orange > a{
     @extend %btn-regular;
     background: $orange !important;
-    border: 2px solid $orange;
+    border: 2px solid $orange !important;
     color: $white !important;
     transition: all 0.2s ease-in;
     font-family: $h-font !important;
@@ -290,9 +296,30 @@ $hover: darken($bg, 10%);
         background: $white;
     }
     &:hover {
-        background: #a75b00 !important;
+//        background: #a75b00 !important;
+        background-color: transparent !important;
+        color: $orange !important;
     }
 }
+
+.btn-regular-with-link-orange-body > a{
+    @extend %btn-regular;
+    background: $orange !important;
+    border: 2px solid $orange !important;
+    color: $white !important;
+    transition: all 0.2s ease-in;
+    font-family: $h-font !important;
+    padding: 12px 30px 9px !important;
+    &:active {
+        background: $white;
+    }
+    &:hover {
+//        background: #a75b00 !important;
+        background-color: transparent !important;
+        color: $orange !important;
+    }
+}
+
 
 .btn-regular-with-link-blue {
     font-family: $h-font !important;
@@ -565,7 +592,7 @@ ul.main-navigation-ul {
 .od-header-title {
     text-align: center;
     position: relative;
-    top: 400px;
+    top: 370px;
     width: 100%;
     @media screen and (max-width: 768px) {
         top: 280px;
@@ -579,7 +606,7 @@ ul.main-navigation-ul {
             font-size: 13.5vw;
         }
         @media screen and (max-width: 400px) {
-            font-size: 12vw;
+            font-size: 16vw !important;
         }
     }
 }
@@ -848,7 +875,7 @@ ul#menu-main_menu {
  }
 
 .mk-main-navigation ul.sub-menu a.menu-item-link {
-    color: $black;
+    color: $body-copy;
     font-family: $h-font;
     &:hover {
         color: $gray-link-hover !important;
@@ -862,6 +889,11 @@ ul#menu-main_menu {
 }
 
 /* ============== Main Menu Links, Buttons and Styles ============== */
+
+.mk-responsive-nav .mk-nav-arrow{
+    opacity: 1 !important;
+}
+
 
 #menu-main_menu,
 #menu-main_menu_french{
@@ -918,6 +950,7 @@ ul#menu-main_menu {
                 height: 100%;
                 line-height: 35px !important;
                 color: $blue;
+                padding: 3px 0px 0px;
                 &:hover {
                     color: $white;
                 }
@@ -933,6 +966,7 @@ ul#menu-main_menu {
             @extend .btn-regular-orange;
             a{
                 color: $white;
+                padding: 3px 20px 0px;
             }
             &:hover {
                 background: none !important;
@@ -1063,8 +1097,12 @@ ul#menu-main_menu {
                         color: rgba(255,255,255,0.7);
                         @media screen and (max-width: 768px){
                             display: block;
-                            right: 25%;
-                            font-size: 25px;
+                            right: 10%;
+                            font-size: 30px;
+                            width: 50px;
+                            height: 100%;
+                            line-height: 1.8;
+                            
                         }
                     }
                     a {
@@ -1074,6 +1112,8 @@ ul#menu-main_menu {
                         color: $gold;
                         font-family: $h-font;
                         font-size: 20px;
+                        max-width: 135px;
+                        margin: 0 auto;
                         @media screen and (max-width: 768px) {
                             text-align: center;
                         }
@@ -1892,7 +1932,7 @@ display: inline-block;
                     background: $gray-light;
                     li {
                         &:first-child a {
-                            padding-top: 20px;
+                            padding-top: 25px;
                         }
                         &:last-child a {
                             padding-bottom: 20px;
@@ -1901,7 +1941,7 @@ display: inline-block;
                             font-family: $p-font;
                             font-size: 16px;
                             margin-left: 20px;
-                            padding: 10px 5px;
+                            padding: 20px 5px;
                             transition: 0.3s all ease-in;
                             border: none;
                             color: $body-copy !important;
@@ -2747,27 +2787,223 @@ display: inline-block;
 //    z-index: 999;
 //}
 
-.load{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
-  /*change these sizes to fit into your project*/
-  width:100px;
-  height:100px;
-    z-index: 999;
-}
-.load hr{border:0;margin:0;width:40%;height:40%;position:absolute;border-radius:50%;animation:spin 2s ease infinite}
-
-.load :first-child{background:$green;animation-delay:-1.5s}
-.load :nth-child(2){background:$red;animation-delay:-1s}
-.load :nth-child(3){background:$orange;animation-delay:-0.5s}
-.load :last-child{background:$blue}
-
-@keyframes spin{
-  0%,100%{transform:translate(0)}
-  25%{transform:translate(160%)}
-  50%{transform:translate(160%, 160%)}
-  75%{transform:translate(0, 160%)}
+/*** centering the whole shebang ***/
+.preloader-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: $white;
+    background-size: cover;
 }
 
+$color-1: #00609c!default;
+$color-2: #FFC627 !default;
+$color-3: #e27c00 !default;
+$color-4: #4e9d2d !default;
 
+// Timing
+$container-rotate-timing:           1600ms !default;
+$spinner-fill-unfill-rotate-timing: 4800ms !default;
+
+
+$spinner-line-count: 4;
+
+$spinner-left-spin:  $spinner-fill-unfill-rotate-timing / $spinner-line-count; // Changes these values can be interesting
+$spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; // Changes these values can be interesting
+
+
+.spinner {
+    position: absolute;
+    margin: -50px 0 0 -30px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    /* Spins external container */
+    animation: container-rotate #{$container-rotate-timing} linear infinite;
+    z-index: 1001;
+}
+
+.spinner-line {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.spinner-line--1 {
+    border-color: $color-1;
+    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-1-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+
+}
+
+.spinner-line--2 {
+    border-color: $color-2;
+    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-2-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+
+.spinner-line--3 {
+    border-color: $color-3;
+    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-3-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+
+.spinner-line--4 {
+    border-color: $color-4;
+    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-4-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+
+}
+
+.spinner-line-cog {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    border-color: inherit;
+}
+
+.spinner-line-cog-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 200%;
+    box-sizing: border-box;
+    height: 100%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: inherit;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    animation: none;
+}
+
+.spinner-line-cog-inner--left {
+        border-right-color: transparent;
+        transform: rotate(129deg);
+        animation: left-spin #{$spinner-left-spin} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+
+.spinner-line-cog-inner--right {
+        left: -100%;
+        border-left-color: transparent;
+        transform: rotate(-129deg);
+        animation: right-spin #{$spinner-right-spin} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+}
+
+.spinner-line-cog-inner--center {
+    width: 1000%;
+    left: -450%;
+}
+
+.spinner-line-ticker {
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 45%;
+    width: 10%;
+    height: 100%;
+    overflow: hidden;
+    border-color: inherit;
+}
+
+// ===============================
+// Animations
+// ===============================
+
+@keyframes container-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fill-unfill-rotate {
+    12.5% {
+        transform: rotate(135deg);
+    }
+    25% {
+        transform: rotate(270deg);
+    }
+    37.5% {
+        transform: rotate(405deg);
+    }
+    50% {
+        transform: rotate(540deg);
+    }
+    62.5% {
+        transform: rotate(675deg);
+    }
+    75% {
+        transform: rotate(810deg);
+    }
+    87.5% {
+        transform: rotate(945deg);
+    }
+    to {
+        transform: rotate(1080deg);
+    }
+}
+
+@keyframes left-spin {
+    0% {
+        transform: rotate(130deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    to {
+        transform: rotate(130deg);
+    }
+}
+@keyframes right-spin {
+    0% {
+        transform: rotate(-130deg);
+    }
+    50% {
+        transform: rotate(5deg);
+    }
+    to {
+        transform: rotate(-130deg);
+    }
+}
+
+// This could be automated
+
+@keyframes line-1-fade-in-out{
+    0%{opacity:1}
+    25%{opacity:1}
+    26%{opacity:0}
+    89%{opacity:0}
+    90%{opacity:1}
+    to{opacity:1}
+}
+
+
+@keyframes line-2-fade-in-out{
+    0%{opacity:0}
+    15%{opacity:0}
+    25%{opacity:1}
+    50%{opacity:1}
+    51%{opacity:0}
+}
+
+@keyframes line-3-fade-in-out{
+    0%{opacity:0}
+    40%{opacity:0}
+    50%{opacity:1}
+    75%{opacity:1}
+    76%{opacity:0}
+}
+
+@keyframes line-4-fade-in-out{
+    0%{opacity:0}
+    65%{opacity:0}
+    75%{opacity:1}
+    90%{opacity:1}
+    to{opacity:0}
+}
 
 
 // ===== FUNDRAISING PAGE STYLING ===== //
@@ -3503,6 +3739,9 @@ display: inline-block;
     div {
         h1 {
             color: $blue;
+            @media screen and (max-width: 400px) {
+                font-size: 7.5vw;
+            }
         }
     }
 }
