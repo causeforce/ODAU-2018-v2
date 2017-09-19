@@ -426,6 +426,33 @@ button {
     }
 }
 /* ============== Link Hover Effect ============== */
+%line-hover-effect {
+    &::after {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: $blue;
+        content: '';
+        opacity: 0;
+        -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+        -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+        transition: opacity 0.3s, transform 0.3s;
+        -webkit-transform: translateY(10px);
+        -moz-transform: translateY(10px);
+        transform: translateY(10px);
+    }
+    &:hover,
+    &:focus{
+        &::after {
+            opacity: 1;
+            -webkit-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+            transform: translateY(0px);
+        }
+    }
+}
 
 //%link-hover-effect {
 //    display: inline-block;
@@ -562,9 +589,10 @@ ul.main-navigation-ul {
 
 .header-pg-row {
     z-index: 100 !important;
-    border-bottom: 15px solid $green;
+    border-bottom: 7px solid $green;
+    min-height: 400px !important;
     @media screen and (max-width: 768px) {
-        min-height: 400px !important;
+        min-height: 250px !important;
     }
     .page-section-content {
         height: 100%;
@@ -592,10 +620,10 @@ ul.main-navigation-ul {
 .od-header-title {
     text-align: center;
     position: relative;
-    top: 370px;
+    top: 200px;
     width: 100%;
     @media screen and (max-width: 768px) {
-        top: 280px;
+        top: 150px;
     }
     h1 {
         color: $white !important;
@@ -882,9 +910,24 @@ ul#menu-main_menu {
     }
 }
 
+ul.main-navigation-ul li.current-menu-parent {
+    a.menu-item-link {
+        color: $blue;
+    }
+}
+
+.main-navigation-ul ul.sub-menu li{
+    a.menu-item-link{
+        color: $gray !important;
+        &:hover {
+            color: $gray-dark !important;
+        }
+    }
+}
+
 .main-navigation-ul ul.sub-menu li.current-menu-item {
     a.menu-item-link{
-        color: $orange !important;
+        color: $blue !important;
     }
 }
 
@@ -907,7 +950,7 @@ ul#menu-main_menu {
         }
         &:first-child {
             .sub-menu {
-                left: -40px;
+                left: -35px;
             }
         }
         &:nth-child(2) {
@@ -916,11 +959,12 @@ ul#menu-main_menu {
             }
         }
         &:nth-child(-n+3){
+            @extend %line-hover-effect;
             margin-right: 35px;
             transition: all 0.2s ease-in;
-            &:hover {
-                border-bottom: 3px solid $blue;
-            }
+//            &:hover {
+//                border-bottom: 3px solid $blue;
+//            }
             a {
                 font-size: 18px;
                 padding-left: 5px;
@@ -939,7 +983,7 @@ ul#menu-main_menu {
             margin-right: 10px;
             transition: all 0.3s ease-in;
             margin-top: 0px !important;
-            border: 2px solid transparent;
+            border: 2px solid $blue;
             @media screen and (max-width: 1410px){
                 width: 110px;
                 a {
@@ -1011,24 +1055,29 @@ ul#menu-main_menu {
 
 /* ============== Footer Menu ============== */
 
-.footer-fifth {		
-    margin-top: 15px;		
+.footer-fourth {
+    padding: 0 25px;
     @media screen and (max-width: 768px) {		
-        text-align: center;		
+        text-align: center;	
+        padding: inherit;
     }		
     a {		
         text-transform: uppercase;		
-        color: $gold !important;		
+        color: $white !important;		
         font-family: $h-font !important;		
         font-size: 20px;		
     }		
 }		
-.footer-sixth {		
-    color: $white !important;		
-    a,		
+.footer-fifth {		
+    color: $white !important;
     p {		
         color: $white !important;		
-    }		
+    }
+    a {
+        color: $gold !important;
+        font-family: $h-font;
+        text-transform: uppercase;
+    }
     @media screen and (max-width: 768px) {		
         text-align: center;		
     }		
@@ -1043,6 +1092,7 @@ ul#menu-main_menu {
     background-color: $blue !important;
     .footer-wrapper{
         max-width: 1250px;
+        overflow: hidden;
         @media screen and (max-width: 1096px) {
             .mk-col-1-5,
             .mk-col-1-6,
@@ -1094,14 +1144,13 @@ ul#menu-main_menu {
                     &::before {
                         display: none;
                         top: 1px;
-                        color: rgba(255,255,255,0.7);
+                        color: $white;
                         @media screen and (max-width: 768px){
                             display: block;
-                            right: 10%;
+                            left: 40%;
                             font-size: 30px;
-                            width: 50px;
-                            height: 100%;
-                            line-height: 1.8;
+                            width: 100%;
+                            line-height: 1.35;
                             
                         }
                     }
@@ -1109,7 +1158,7 @@ ul#menu-main_menu {
                         display: block;
                         text-align: left;
                         text-transform: uppercase;
-                        color: $gold;
+                        color: $white;
                         font-family: $h-font;
                         font-size: 20px;
                         max-width: 135px;
@@ -1128,7 +1177,7 @@ ul#menu-main_menu {
                             a {
                                 color: $white;
                                 font-family: $p-font;
-                                font-size: 16px;
+                                font-size: 14px;
                                 text-transform: inherit;
                                 text-align: left;
                                 @media screen and (max-width: 768px) {
@@ -1147,7 +1196,7 @@ ul#menu-main_menu {
                     a {
                         display: block;
                         margin: 0 auto;
-                        width: 65px;
+                        width: 80px;
                     }
                 }
             }
@@ -1160,6 +1209,11 @@ ul#menu-main_menu {
                 }
             }
         }
+        ul {
+            li {
+                line-height: 1.5;
+            }
+        }
     }
 }
 
@@ -1169,7 +1223,11 @@ ul#menu-main_menu {
         font-family: $h-font;
     }
     p {
-        color: $white;
+        color: $gold !important;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 12px !important;
+        margin-bottom: 13px;
     }
     img {
         display: block;
@@ -1508,20 +1566,20 @@ div.p-block {
     }
 }
 
-.vc_tta-title-text{
-    @media screen and (max-width: 768px) {
-        &:after {
-            font-family: FontAwesome;
-            content: "\f067";
-            color: $blue;
-            float: right;
-            font-size: 18px;
-            position: relative;
-            left: 20px;
-            top: 0px;
-        }
-    } 
-}
+//.vc_tta-title-text{
+//    @media screen and (max-width: 768px) {
+//        &:after {
+//            font-family: FontAwesome;
+//            content: "\f067";
+//            color: $blue;
+//            float: right;
+//            font-size: 18px;
+//            position: relative;
+//            left: 20px;
+//            top: 0px;
+//        }
+//    } 
+//}
 .minus{
     &:after {
         content: "\f068";
@@ -1984,28 +2042,6 @@ display: inline-block;
                         }
                     }
                 }
-                &:nth-child(n+4) {
-                    a {
-                        padding: 25px;
-                        text-align: center;
-                    }
-                }
-                &:nth-child(4) {
-                    background: $orange;
-                    a {
-                        color: $white !important;
-                    }
-                }
-                &:nth-child(n+5) {
-                    border-bottom: 1px solid $blue;
-                    transition: all 0.2s ease-in;
-                    &:hover {
-                        background: $blue;
-                        a {
-                            color: $white !important;
-                        }
-                    }
-                }
                 a {
                     font-size: 20px;
                     color: $blue !important;
@@ -2017,6 +2053,33 @@ display: inline-block;
                 span.mk-nav-arrow {
                     svg {
                         display: none;
+                    }
+                }
+            }
+            li.menu-item-object-custom {
+                &:nth-child(4) {
+                    background: $orange;
+                    &:hover {
+                        background: #ab5e01;
+                    }
+                    a {
+                        color: $white !important;
+                    }
+                }
+                &:nth-child(n+4) {
+                    a {
+                        padding: 25px;
+                        text-align: center;
+                    }
+                }
+                &:nth-child(n+5) {
+                    border-bottom: 1px solid $blue;
+                    transition: all 0.2s ease-in;
+                    &:hover {
+                        background: $blue;
+                        a {
+                            color: $white !important;
+                        }
                     }
                 }
             }
@@ -2797,117 +2860,294 @@ display: inline-block;
     background-size: cover;
 }
 
-$color-1: #00609c!default;
-$color-2: #FFC627 !default;
-$color-3: #e27c00 !default;
-$color-4: #4e9d2d !default;
-
-// Timing
-$container-rotate-timing:           1600ms !default;
-$spinner-fill-unfill-rotate-timing: 4800ms !default;
-
-
-$spinner-line-count: 4;
-
-$spinner-left-spin:  $spinner-fill-unfill-rotate-timing / $spinner-line-count; // Changes these values can be interesting
-$spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; // Changes these values can be interesting
-
-
-.spinner {
-    position: absolute;
-    margin: -50px 0 0 -30px;
-    height: 80px;
-    top: 50%;
-    left: 50%;
-    width: 80px;
-    /* Spins external container */
-    animation: container-rotate #{$container-rotate-timing} linear infinite;
-    z-index: 1001;
+.preloader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 0;
+  width: 25%;
+  padding-bottom: 25%;
 }
 
-.spinner-line {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
+.preloader-top {
+  position: absolute;
+  width: 100%;
+  height: 75%;
+  top: 0;
+  overflow: hidden;
 }
 
-.spinner-line--1 {
-    border-color: $color-1;
-    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-1-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-
+.preloader-top-sun {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 0;
+  width: 35%;
+  padding-bottom: 35%;
+  animation: preloader 2s linear infinite;
 }
 
-.spinner-line--2 {
-    border-color: $color-2;
-    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-2-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+.preloader-top-sun-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 5px solid #FFC627;
+  box-sizing: border-box;
+  animation: changeColors01 1.5s infinite alternate;
 }
 
-.spinner-line--3 {
-    border-color: $color-3;
-    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-3-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+.preloader-top-sun-line {
+  position: absolute;
+  width: 20%;
+  height: 5px;
+  border-radius: 5px;
+  background: #e27c00;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
-.spinner-line--4 {
-    border-color: $color-4;
-    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-4-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
-
+.preloader-top-sun-line-0 {
+  transform: rotate(0deg) translateX(-350%);
+  background-color: #00609c;
 }
 
-.spinner-line-cog {
-    display: inline-block;
-    position: relative;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    border-color: inherit;
+.preloader-top-sun-line-45 {
+  transform: rotate(45deg) translateX(-350%);
+  background-color: #e27c00;
 }
 
-.spinner-line-cog-inner {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    width: 200%;
-    box-sizing: border-box;
-    height: 100%;
-    border-width: 3px;
-    border-style: solid;
-    border-color: inherit;
-    border-bottom-color: transparent;
-    border-radius: 50%;
-    animation: none;
+.preloader-top-sun-line-90 {
+  transform: rotate(90deg) translateX(-350%);
+  background-color: #4e9d2d;
 }
 
-.spinner-line-cog-inner--left {
-        border-right-color: transparent;
-        transform: rotate(129deg);
-        animation: left-spin #{$spinner-left-spin} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+.preloader-top-sun-line-135 {
+  transform: rotate(135deg) translateX(-350%);
+  background-color: #FFC627;
 }
 
-.spinner-line-cog-inner--right {
-        left: -100%;
-        border-left-color: transparent;
-        transform: rotate(-129deg);
-        animation: right-spin #{$spinner-right-spin} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+.preloader-top-sun-line-180 {
+  transform: rotate(180deg) translateX(-350%);
+  background-color: #00609c;
 }
 
-.spinner-line-cog-inner--center {
-    width: 1000%;
-    left: -450%;
+.preloader-top-sun-line-225 {
+  transform: rotate(225deg) translateX(-350%);
+  background-color: #e27c00;
 }
 
-.spinner-line-ticker {
-    position: absolute;
-    box-sizing: border-box;
-    top: 0;
-    left: 45%;
-    width: 10%;
-    height: 100%;
-    overflow: hidden;
-    border-color: inherit;
+.preloader-top-sun-line-270 {
+  transform: rotate(270deg) translateX(-350%);
+   background-color: #4e9d2d;
 }
+
+.preloader-top-sun-line-315 {
+  transform: rotate(315deg) translateX(-350%);
+  background-color: #FFC627;
+}
+
+.preloader-bottom {
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  bottom: 0;
+}
+
+.preloader-bottom-line {
+  position: absolute;
+  background: gold;
+  height: 5px;
+  border-radius: 5px;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.preloader-bottom-line-lg {
+  width: 100%;
+  top: 0%
+}
+
+.preloader-bottom-line-md {
+  width: 75%;
+  top: 25%
+}
+
+.preloader-bottom-line-sm {
+  width: 50%;
+  top: 50%
+}
+
+.preloader-bottom-line-xs {
+  width: 25%;
+  top: 75%
+}
+
+@keyframes preloader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes preloader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes preloader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes changeColors02 {
+  0% {border-color: #4d9d45;}
+  50% {border-color: #e07e26;}
+  100% {border-color: #006394;}
+}
+
+@-webkit-keyframes changeColors01 {
+  0% {border-color: #006394;}
+  50% {border-color: #4d9d45;}
+  100% {border-color: #e07e26;}
+}
+
+@-moz-keyframes changeColors01 {
+  0% {border-color: #006394;}
+  50% {border-color: #4d9d45;}
+  100% {border-color: #e07e26;}
+}
+
+//$color-1: #00609c!default;
+//$color-2: #FFC627 !default;
+//$color-3: #e27c00 !default;
+//$color-4: #4e9d2d !default;
+//
+//// Timing
+//$container-rotate-timing:           1600ms !default;
+//$spinner-fill-unfill-rotate-timing: 4800ms !default;
+//
+//
+//$spinner-line-count: 4;
+//
+//$spinner-left-spin:  $spinner-fill-unfill-rotate-timing / $spinner-line-count; // Changes these values can be interesting
+//$spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; // Changes these values can be interesting
+//
+//
+//.spinner {
+//    position: absolute;
+//    margin: -50px 0 0 -30px;
+//    height: 80px;
+//    top: 50%;
+//    left: 50%;
+//    width: 80px;
+//    /* Spins external container */
+//    animation: container-rotate #{$container-rotate-timing} linear infinite;
+//    z-index: 1001;
+//}
+//
+//.spinner-line {
+//    position: absolute;
+//    width: 100%;
+//    height: 100%;
+//    opacity: 0;
+//}
+//
+//.spinner-line--1 {
+//    border-color: $color-1;
+//    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-1-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+//
+//}
+//
+//.spinner-line--2 {
+//    border-color: $color-2;
+//    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-2-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+//}
+//
+//.spinner-line--3 {
+//    border-color: $color-3;
+//    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-3-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+//}
+//
+//.spinner-line--4 {
+//    border-color: $color-4;
+//    animation: fill-unfill-rotate #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both, line-4-fade-in-out #{$spinner-fill-unfill-rotate-timing} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+//
+//}
+//
+//.spinner-line-cog {
+//    display: inline-block;
+//    position: relative;
+//    width: 50%;
+//    height: 100%;
+//    overflow: hidden;
+//    border-color: inherit;
+//}
+//
+//.spinner-line-cog-inner {
+//    position: absolute;
+//    top: 0;
+//    bottom: 0;
+//    right: 0;
+//    left: 0;
+//    width: 200%;
+//    box-sizing: border-box;
+//    height: 100%;
+//    border-width: 3px;
+//    border-style: solid;
+//    border-color: inherit;
+//    border-bottom-color: transparent;
+//    border-radius: 50%;
+//    animation: none;
+//}
+//
+//.spinner-line-cog-inner--left {
+//        border-right-color: transparent;
+//        transform: rotate(129deg);
+//        animation: left-spin #{$spinner-left-spin} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+//}
+//
+//.spinner-line-cog-inner--right {
+//        left: -100%;
+//        border-left-color: transparent;
+//        transform: rotate(-129deg);
+//        animation: right-spin #{$spinner-right-spin} cubic-bezier(0.4, 0, 0.2, 1) infinite both;
+//}
+//
+//.spinner-line-cog-inner--center {
+//    width: 1000%;
+//    left: -450%;
+//}
+//
+//.spinner-line-ticker {
+//    position: absolute;
+//    box-sizing: border-box;
+//    top: 0;
+//    left: 45%;
+//    width: 10%;
+//    height: 100%;
+//    overflow: hidden;
+//    border-color: inherit;
+//}
 
 // ===============================
 // Animations
@@ -3213,7 +3453,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
             white-space: initial !important;
             line-height: 1.0 !important;
             span {
-                color: $gray;
+//                color: $gray;
                 font-size: 20px;
             }
             &:first-child {
@@ -3240,7 +3480,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
             li.tab-current {
                 a {
                     span {
-                        color: $blue !important;
+                        color: $blue;
                         border-bottom: 2px solid $blue;
                     }
                 }
@@ -3335,7 +3575,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 .od-gray-row {
     background: $gray-light;
     .od-gray-column {
-        padding: 65px 50px;
+        padding: 65px 10%;
         @media screen and (max-width: 768px) {
             padding: 20px;
         }
@@ -3556,17 +3796,11 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 
 .green-header-pg-row {		
     @extend .header-pg-row;		
-    border-bottom: 15px solid $green;
-    @media screen and (max-width: 768px) {
-        min-height: 400px !important;
-    }
+    border-color: $green;
 }
 .orange-header-pg-row {		
     @extend .header-pg-row;		
-    border-bottom: 15px solid $orange;
-    @media screen and (max-width: 768px) {
-        min-height: 400px !important;
-    }
+    border-color: $orange;
 }
 .homepage-orange-header-pg-row {
     @extend .header-pg-row;		
@@ -3577,10 +3811,7 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 }
 .blue-header-pg-row {		
     @extend .header-pg-row;		
-    border-bottom: 15px solid $blue;
-    @media screen and (max-width: 768px) {
-        min-height: 400px !important;
-    }
+    border-color: $blue;
 }
 
 // =============== OD18 IMPACT Page =============== //
@@ -3683,11 +3914,79 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
     }
 }
 
+// =============== OD18 MOE ACCORDION =============== //
+.moe-accordion-content {
+    display: none;
+}
+h2.moe-accordion-title {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.plusTitle {
+    &:after {
+        content: "\f067";
+        position: absolute;
+        right: 10px;
+        font-family: $a-font;
+    }
+}
+.minusTitle {
+    &:after {
+        content: "\f068";
+        position: absolute;
+        right: 10px;
+        font-family: $a-font;
+        color: $gray-dark;
+    }
+}
+// =============== OD18 VOLUNTEERS Page =============== //
+.fundraising-tabs {
+    .vol-accord-col {
+        h3 {
+            color: $green;
+            cursor: pointer;
+        }
+    }
+}
 // =============== OD18 FUNDRAISING Page =============== //
 
 .fundraising-tabs {
+    a {
+        color: $green;
+    }
     .et-tabs.et-vertical.et-mobile-enabled.et-tabs-style-underline.tab-class-407549507.et-align-left.e-tab-container nav ul li.tab-current a {
-        border-bottom: 2px solid $blue;
+        border-bottom: 2px solid $green;
+    }
+    .infi-content-wrapper {
+        .mk-text-block {
+            h2 {
+                color: $green;
+            }   
+        }
+    }
+    .et-tabs.et-vertical.et-mobile-enabled.et-tabs-style-underline.et-align-left.e-tab-container {
+        nav{
+            ul {
+                li.tab-current {
+                    a {
+                        span {
+                            color: $green;
+                            border-bottom: 2px solid $green;
+                        }
+                    }
+                } 
+            } 
+        } 
+    }
+    @media screen and (max-width: 768px) {
+        .plusTitle:after,
+        .minusTitle:after {
+            right: 0px;
+        }
     }
 }
 
@@ -3753,6 +4052,159 @@ $spinner-right-spin: $spinner-fill-unfill-rotate-timing / $spinner-line-count; /
 }
 
 
+
+// =============== OD18 POWERPLAN Page =============== //
+.orange-tab {
+    .power-plan-amt {
+        h2 {
+            text-align: right;
+            @media screen and (max-width: 768px) {
+                text-align: center;
+            }
+        }
+    }
+    li.vc_tta-tab .vc_active {
+        background: $orange;
+        color: $white;
+    }
+    .vc_tta-panels-container{
+        border: 2px solid $orange;
+        @media screen and (max-width: 768px) {
+            border: none;
+        }
+        a {
+            color: $orange;
+        }
+    }
+    div.vc_tta-tabs-container {
+        ul.vc_tta-tabs-list {
+            li.vc_tta-tab.vc_active {
+                a {
+                    background: $orange !important;
+                    color: $white !important;
+                }
+            }
+        }
+    }
+    div.vc_tta-tabs-container {
+        ul.vc_tta-tabs-list {
+            li.vc_tta-tab {
+                border-top: 2px solid $orange;
+                border-left: 2px solid $orange;
+                &:last-child {
+                    border-right: 2px solid $orange;
+                }
+                &:hover {
+                    a {
+                        background: $orange;
+                        color: $white;
+                    }
+                }
+                a {
+                    background: none;
+                    padding: 5px 30px;
+                    color: $orange;
+                    font-family: $h-font;
+                }
+            }
+        }
+    }
+    div.vc_tta-panels-container {
+        div.vc_tta-panels {
+            div.vc_tta-panel.vc_active {
+                .vc_tta-panel-heading {
+                    @media screen and (max-width: 768px) {
+                        background-color: $orange !important;
+                        text-align: center;
+                        h4 {
+                            a {
+                                color: $white;
+                                font-size: 1.5em;
+                            }
+                        }
+                        .vc_tta-panel-body {
+                            border: 2px solid $orange;
+                        }
+                    }
+                }
+                .vc_tta-panel-body {
+                    @media screen and (max-width: 768px) {
+                        border: 2px solid $orange;
+                    }
+                }
+            }
+            div.vc_tta-panel {
+                @media screen and (max-width: 768px) {
+                    .vc_tta-panel-heading {
+                        text-align: center;
+                        border: 2px solid $orange;
+                        margin-top: 10px;
+                        h4 a {
+                            color: $orange;
+                            font-size: 1.5em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// =============== OD18 Campaigns and Challenges Page =============== //
+.toolkit-column {
+    a {
+        font-family: $h-font;
+    }
+    .wpb_raw_code.wpb_content_element.wpb_raw_html {
+        margin-bottom: 20px;
+    }
+}
+
+.toolkit-title {
+    p {
+        font-size: 22px;
+        text-transform: uppercase;
+        font-family: $h-font;
+        border-bottom: 2px solid $orange;
+        margin-bottom: 40px;
+    }
+}
+#section-gear-up {
+    .participation-row {
+        background: $orange;
+        p {
+            color: $white;
+            padding: 20px 0px;
+            margin-bottom: 0px;
+        }
+    }
+    .part-rwds-row {
+        background: #fcf4ea;
+        &:nth-child(even){
+            background: $white;
+        }
+        p,i.fa.fa-check {
+            padding: 20px 0px;
+        }
+        i.fa.fa-check {
+            color: $orange;
+            line-height: 2.0;
+            &:last-child {
+                line-height: 2.56;
+            }
+            @media screen and (max-width: 768px) {
+                line-height: normal;
+            }
+        }
+        p{
+            font-size: 14px;
+            margin-bottom: 0px;
+        }
+        .wpb_raw_code.wpb_content_element.wpb_raw_html {
+            margin-bottom: 0px;
+        }
+    }
+}
 
 // =============== OD18 COMPANY Page =============== //
 .company-row {

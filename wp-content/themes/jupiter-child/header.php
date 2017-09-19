@@ -12,55 +12,21 @@
 	?>
 	
 	<div class="preloader-wrapper">
-     
-        <!-- Comments are just to fix whitespace with inline-block -->
-        <div class="spinner"><!--
-            --><div class="spinner-line spinner-line--1"><!--
-                --><div class="spinner-line-cog"><!--
-                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--left"></div><!--
-                --></div><!--
-                --><div class="spinner-line-ticker"><!--
-                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--center"></div><!--
-                --></div><!--
-                --><div class="spinner-line-cog"><!--
-                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--right"></div><!--
-                --></div><!--
-            --></div><!--
-            --><div class="spinner-line spinner-line--2"><!--
-                --><div class="spinner-line-cog"><!--
-                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--left"></div><!--
-                --></div><!--
-                --><div class="spinner-line-ticker"><!--
-                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--center"></div><!--
-                --></div><!--
-                --><div class="spinner-line-cog"><!--
-                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--right"></div><!--
-                --></div><!--
-            --></div><!--
-            --><div class="spinner-line spinner-line--3"><!--
-                --><div class="spinner-line-cog"><!--
-                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--left"></div><!--
-                --></div><!--
-                --><div class="spinner-line-ticker"><!--
-                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--center"></div><!--
-                --></div><!--
-                --><div class="spinner-line-cog"><!--
-                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--right"></div><!--
-                --></div><!--
-            --></div><!--
-            --><div class="spinner-line spinner-line--4"><!--
-                --><div class="spinner-line-cog"><!--
-                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--left"></div><!--
-                --></div><!--
-                --><div class="spinner-line-ticker"><!--
-                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--center"></div><!--
-                --></div><!--
-                --><div class="spinner-line-cog"><!--
-                    --><div class="spinner-line-cog-inner spinner-line-cog-inner--right"></div><!--
-                --></div><!--
-            --></div><!--
-
-        --></div><!--/spinner -->
+      <div class="preloader">
+          <div class="preloader-top">
+            <div class="preloader-top-sun">
+              <div class="preloader-top-sun-bg"></div>
+              <div class="preloader-top-sun-line preloader-top-sun-line-0"></div>
+              <div class="preloader-top-sun-line preloader-top-sun-line-45"></div>
+              <div class="preloader-top-sun-line preloader-top-sun-line-90"></div>
+              <div class="preloader-top-sun-line preloader-top-sun-line-135"></div>
+              <div class="preloader-top-sun-line preloader-top-sun-line-180"></div>
+              <div class="preloader-top-sun-line preloader-top-sun-line-225"></div>
+              <div class="preloader-top-sun-line preloader-top-sun-line-270"></div>
+              <div class="preloader-top-sun-line preloader-top-sun-line-315"></div>
+            </div>
+          </div>
+        </div>
     </div>
   
 

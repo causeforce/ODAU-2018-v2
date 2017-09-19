@@ -1,5 +1,14 @@
 $(document).ready(function () {
     
+    // Moe's Custom Accordion
+    $('h3.moe-accordion-title, h2.moe-accordion-title').addClass('plusTitle');
+    $('h3.moe-accordion-title, h2.moe-accordion-title').on('click', function() {
+        $(this).siblings('.moe-accordion-content').slideToggle('fast');
+        $(this).addClass('active-link');
+        $('h3.moe-accordion-title, h2.moe-accordion-title').not(this).removeClass('active-link');
+        $(this).toggleClass('minusTitle', 'plusTitle');
+    });
+    
     // Impact page move accordion into Tab
     $('.faqs_accordion_row').appendTo('#section-impact-tab-01');
     
@@ -19,74 +28,21 @@ $(document).ready(function () {
     
     changeActiveClass('.company-nav h4 a', 'active-green');
     changeActiveClass('.as-team-nav h4 a', 'active-orange');
-    
-    
-    // Fifth Footer Widget
-    $('.footer-wrapper .mk-padding-wrapper div:nth-child(5)').removeClass('mk-col-1-6');
-    $('.footer-wrapper .mk-padding-wrapper div:nth-child(5)').addClass('mk-col-1-8');
-    // Sixth Footer Widget
-    $('.footer-wrapper .mk-padding-wrapper div:nth-child(6)').removeClass('mk-col-1-6');
-    $('.footer-wrapper .mk-padding-wrapper div:nth-child(6)').addClass('mk-col-1-5');
 
-    // Footer Social Icons
-//    $(function() {
-//        if ( document.location.href.indexOf('/montreal') > -1 ) {
-//            $('#sub-footer>.mk-grid').prepend('<div class="footer-social"><div class="social-icon-container"><a  target="_blank" href="https://www.facebook.com/LeCycloDefi/">&#xf09a;</a></div> <div class="social-icon-container"><a target="_blank" href="https://www.instagram.com/quebecride/">&#xf16d;</a></div> <div class="social-icon-container"><a target="_blank" href="https://twitter.com/TheQuebecRide">&#xf099;</a></div></div>');
-//        } else {
-//            $('#sub-footer>.mk-grid').prepend('<div class="footer-social"><div class="social-icon-container"><a  target="_blank" href="https://www.facebook.com/OntarioRide">&#xf09a;</a></div> <div class="social-icon-container"><a target="_blank" href="http://instagram.com/ontarioride">&#xf16d;</a></div> <div class="social-icon-container"><a target="_blank" href="http://www.twitter.com/TheOntarioRide">&#xf099;</a></div></div>');
-//        }
-//    });
-    
     // Open Accordion on Outfitters Page
     $('.outfitters-accordion-section').removeClass('vc_active');
     
     // Accordion to change into minus on click
-    $('.vc_tta-panel-heading').click(function(){
-       var collapsed=$(this).find('i').hasClass('fa-plus');
-
-        $('.vc_tta-icon').removeClass('fa-minus');
-
-        $('.vc_tta-icon').addClass('fa-plus');
-        if(collapsed){
-            $('.vc_tta-icon',this).toggleClass('fa-plus fa-minus');
-        }
-    });
-    
-    // Top Teams JSON Script
-    var topTeamsURL = 'https://secure2.convio.net/cfrca/site/CRTeamraiserAPI?method=getTopTeamsData&api_key=cfrca&v=1.0&fr_id=1581&response_format=json';
-    
-    $.getJSON(topTeamsURL, function(data){
-        var topTeamsData = data.getTopTeamsDataResponse.teamraiserData;
-        $(topTeamsData).each(function (index, value){
-            $('#top-teams').append("<li>" + value.name + "</li>" + "<li>" + value.total + "</li>");
-       }); 
-    });
-    
-    // Top Fundraising JSON Script
-    var fundRaisingURL = 'https://secure2.convio.net/cfrca/site/CRTeamraiserAPI?method=getTopParticipantsData&api_key=cfrca&v=1.0&fr_id=1581&response_format=json';
-    
-    $.getJSON(fundRaisingURL, function(data){
-        var topFundraisingData = data.getTopParticipantsDataResponse.teamraiserData;
-        $(topFundraisingData).each(function (index, value){
-            $('#top-fundraising').append("<li>" + value.name + "</li>" + "<li>" + value.total + "</li>");
-       }); 
-    });
-    
-    // Top Crews List
-    var topCrewsURL = 'https://crossorigin.me/http://to17.conquercancer.ca/top_ten_lists/cfrca.top_ten_crew_Toronto17.html';
-    
-    $.get(topCrewsURL, function(data) {
-       $('#top-crews').append(data);
-    });
-    
-    // Top Ambassadors List
-    var topAmbassadorsURL = 'https://crossorigin.me/http://to17.conquercancer.ca/top_ten_lists/cfrca.Toronto17_Ambassadors_List_hide.html';
-    
-    $.get(topAmbassadorsURL, function(data) {
-       
-        $('#top-ambassadors').html(data);
-//       $('#top-ambassadors').append(data);
-    });
+//    $('.vc_tta-panel-heading').click(function(){
+//       var collapsed=$(this).find('i').hasClass('fa-plus');
+//
+//        $('.vc_tta-icon').removeClass('fa-minus');
+//
+//        $('.vc_tta-icon').addClass('fa-plus');
+//        if(collapsed){
+//            $('.vc_tta-icon',this).toggleClass('fa-plus fa-minus');
+//        }
+//    });
     
     // View More or View Less for Top List and Text
     $('ul#top-teams, ul#top-fundraising, #top-ambassadors').on('click','.more', function(){
