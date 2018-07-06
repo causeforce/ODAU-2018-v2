@@ -25,6 +25,9 @@ $(document).ready(function () {
            } 
         });
     } else {
+        $('.od-rewards-row:eq(0)').appendTo('.mobile-first-col');
+        $('.od-rewards-row:eq(1)').appendTo('.mobile-second-col');
+        
         // Ambassador page setting variables for rewards
         var bronzeRewards = $('.rewards-01, .rewards-02, .rewards-03, .rewards-04');
         var silverRewards = $('.rewards-01, .rewards-02, .rewards-03, .rewards-05');
